@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { DndContext, rectIntersection, type DragEndEvent } from "@dnd-kit/core";
 import { useDispatch, useSelector } from "react-redux";
 import { moveTask } from "../../features/taskSlice";
@@ -39,7 +39,10 @@ export default function Board() {
 
   return (
     <DndContext collisionDetection={rectIntersection} onDragEnd={handleDragEnd}>
-      <div className="flex gap-6 p-6 overflow-x-auto min-h-[400px]">
+      <div
+        className="flex gap-6 p-6 overflow-x-auto min-h-[400px]"
+        style={{ overflowAnchor: "none" }}
+      >
         {states.map((state) => (
           <Column
             key={state.id}

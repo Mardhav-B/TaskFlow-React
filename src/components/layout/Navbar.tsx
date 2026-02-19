@@ -8,7 +8,7 @@ interface NavbarProps {
 
 export default function Navbar({ onCreate, onSettings }: NavbarProps) {
   return (
-    <div className="flex justify-between items-center px-6 py-4 border-b bg-white">
+    <div className="fixed top-0 left-0 right-0 z-20 flex justify-between items-center px-6 py-4 border-b bg-white shadow-sm">
       <h1 className="text-xl font-bold">TaskFlow</h1>
       <div className="flex gap-2">
         <Button variant="outline" onClick={onSettings} size="sm">

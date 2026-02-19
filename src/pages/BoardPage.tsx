@@ -10,13 +10,13 @@ export default function BoardPage() {
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="h-screen bg-gray-100">
+      <Navbar
+        onCreate={() => setCreateOpen(true)}
+        onSettings={() => setSettingsOpen(true)}
+      />
       <Sidebar />
-      <div className="flex-1 flex flex-col">
-        <Navbar
-          onCreate={() => setCreateOpen(true)}
-          onSettings={() => setSettingsOpen(true)}
-        />
+      <div className="mt-16 md:ml-60 h-[calc(100vh-4rem)] overflow-auto">
         <Board />
       </div>
       <CreateTaskModal open={createOpen} setOpen={setCreateOpen} />
